@@ -18,11 +18,11 @@
     "job_links": {
         "JOB_1": {
             "port": 8289,
-            "targetjob": "job::/production/russia::webapp2"
+            "targetjob": "job::/sandbox/jamie.smith::web2"
         },
         "JOB_2": {
             "port": 8389,
-            "targetjob": "job::/production/russia::webapp3"
+            "targetjob": "job::/sandbox/jamie.smith::web3"
         }
     },
     "logo": "https://www.apcera.com/sites/default/files/apcera_logo_0.png",
