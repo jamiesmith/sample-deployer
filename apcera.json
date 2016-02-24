@@ -31,9 +31,7 @@
     "services": {
         "BANANA": {
             "parameters": {
-                "param1": "value",
-                "param2": "value",
-                "param3": "value"
+                "nyi": "value"
             },
             "service": "service::/dev::todo-db"
         }
