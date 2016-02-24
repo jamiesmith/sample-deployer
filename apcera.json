@@ -1,5 +1,5 @@
 {
-    "allowegress": false,
+    "allowegress": true,
     "description": "Unopinionated Todo App",
     "environment": {
         "VAR1": {
