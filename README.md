@@ -7,9 +7,10 @@ A simple NodeJS ToDo app with a twist - it can show you the source and type of p
 
 To get your own Todo App running on Apcera, click the button below:
 
-[![Deploy](button.png)](http://localhost:3000/?template=https://github.com/jamiesmith/sample-deployer)
+[![Deploy](button.png)](http://deploy-to-apcera.jamie.smith.sandbox.demo.proveapcera.io/?template=https://github.com/jamiesmith/sample-deployer)
 
 Fill out the form, and you should be good to go in a few seconds.
+
 
 ## Configuration
 
@@ -41,3 +42,9 @@ There is a cluster location map which shows the locations defined by the cluster
 ![Sample Cluster Locations](./prove-cluster.jpg)
 
 The server map section of the page has also been updated to do this.  The map stays where it is, and the active node jumps around while running, while nodes are present.
+
+
+
+-----
+
+[deploy from localhost](http://localhost:3000/?template=https://github.com/jamiesmith/sample-deployer)
