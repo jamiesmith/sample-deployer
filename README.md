@@ -3,6 +3,14 @@
 
 A simple NodeJS ToDo app with a twist - it can show you the source and type of provider serving the underlying REST API.
 
+## Deploying on Apcera
+
+To get your own Todo App running on Apcera, click the button below:
+
+[![Deploy](button.png)](http://localhost:3000/?template=https://github.com/jamiesmith/sample-deployer)
+
+Fill out the form, and you should be good to go in a few seconds.
+
 ## Configuration
 
 There is 'config.json' that maps IP addresses to implied cloud provider, region, map marker and map marker position.
