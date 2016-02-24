@@ -27,7 +27,7 @@
     },
     "logo": "https://www.apcera.com/sites/default/files/apcera_logo_0.png",
     "name": "simple todo app",
-    "repository": "https://github.com/cobyism/ghost-on-heroku",
+    "repository": "https://github.com/jamiesmith/sample-deployer",
     "services": {
         "NAME_OF_BINDING1": {
             "parameters": {
