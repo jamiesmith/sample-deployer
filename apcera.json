@@ -1,0 +1,49 @@
+{
+    "allowegress": false,
+    "description": "Unopinionated Todo App",
+    "environment": {
+        "VAR1": {
+            "description": "This is the description",
+            "value": "this is the default value for VAR1"
+        },
+        "VAR2": {
+            "description": "This is the description",
+            "value": "this is the default value for VAR2"
+        },
+        "VAR3": {
+            "description": "This is the description",
+            "value": "this is the default value for VAR3"
+        }
+    },
+    "job_links": {
+        "JOB_1": {
+            "port": 8888,
+            "targetjob": "job::/production/russia::webapp1"
+        },
+        "JOB_2": {
+            "port": 9999,
+            "targetjob": "job::/production/russia::webapp2"
+        }
+    },
+    "logo": "https://www.apcera.com/sites/default/files/apcera_logo_0.png",
+    "name": "simple todo app",
+    "repository": "https://github.com/cobyism/ghost-on-heroku",
+    "services": {
+        "NAME_OF_BINDING1": {
+            "parameters": {
+                "param1": "value",
+                "param2": "value",
+                "param3": "value"
+            },
+            "service": "service::/dev::todo-db"
+        },
+        "NAME_OF_BINDING2": {
+            "parameters": {
+                "param1": "value2",
+                "param2": "value5",
+                "param3": "value2"
+            },
+            "service": "service::/dev::todo-db-alt"
+        }
+    }
+}
