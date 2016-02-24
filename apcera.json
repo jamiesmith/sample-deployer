@@ -29,21 +29,13 @@
     "name": "simple todo app",
     "repository": "https://github.com/jamiesmith/sample-deployer",
     "services": {
-        "NAME_OF_BINDING1": {
+        "BANANA": {
             "parameters": {
                 "param1": "value",
                 "param2": "value",
                 "param3": "value"
             },
             "service": "service::/dev::todo-db"
-        },
-        "NAME_OF_BINDING2": {
-            "parameters": {
-                "param1": "value2",
-                "param2": "value5",
-                "param3": "value2"
-            },
-            "service": "service::/dev::todo-db-alt"
         }
     }
 }
