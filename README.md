@@ -7,7 +7,7 @@ A simple NodeJS ToDo app with a twist - it can show you the source and type of p
 
 To get your own Todo App running on Apcera, click the button below:
 
-[![Deploy](button.png)](http://deploy-to-apcera.jamie.smith.sandbox.demo.proveapcera.io/?template=https://github.com/jamiesmith/sample-deployer)
+[![Deploy](button.png)](http://deployer.demo.proveapcera.io/?template=https://github.com/jamiesmith/sample-deployer)
 
 Fill out the form, and you should be good to go in a few seconds.
 
