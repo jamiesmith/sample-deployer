@@ -5,25 +5,9 @@
         "VAR1": {
             "description": "This is the description",
             "value": "this is the default value for VAR1"
-        },
-        "VAR2": {
-            "description": "This is the description",
-            "value": "this is the default value for VAR2"
-        },
-        "VAR3": {
-            "description": "This is the description",
-            "value": "this is the default value for VAR3"
         }
     },
     "job_links": {
-        "JOB_1": {
-            "port": 8289,
-            "targetjob": "job::/sandbox/jamie.smith::web2"
-        },
-        "JOB_2": {
-            "port": 8389,
-            "targetjob": "job::/sandbox/jamie.smith::web3"
-        },
         "MISSING_JOB": {
             "port": 8389,
             "targetjob": "job::/no/such/job"
@@ -34,17 +18,11 @@
     "repository": "https://github.com/jamiesmith/sample-deployer",
 	"repository_subdir": "",
     "services": {
-        "BANANA": {
+        "todo-database": {
             "parameters": {
                 "nyi": "value"
             },
             "service": "service::/dev::todo-db"
-        },
-        "SPLIT": {
-            "parameters": {
-                "nyi": "value"
-            },
-            "service": "service::/not/there"
         }
     }
 }
