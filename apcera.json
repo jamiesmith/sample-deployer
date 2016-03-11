@@ -19,6 +19,14 @@
         "JOB_1": {
             "port": 8289,
             "targetjob": "job::/sandbox/jamie.smith::web2"
+        },
+        "JOB_2": {
+            "port": 8389,
+            "targetjob": "job::/sandbox/jamie.smith::web3"
+        },
+        "MISSING_JOB": {
+            "port": 8389,
+            "targetjob": "job::/no/such/job"
         }
     },
     "logo": "https://www.apcera.com/sites/default/files/apcera_logo_0.png",
@@ -26,11 +34,17 @@
     "repository": "https://github.com/jamiesmith/sample-deployer",
 	"repository_subdir": "",
     "services": {
-        "todo-database": {
+        "BANANA": {
             "parameters": {
                 "nyi": "value"
             },
             "service": "service::/dev::todo-db"
+        },
+        "SPLIT": {
+            "parameters": {
+                "nyi": "value"
+            },
+            "service": "service::/not/there"
         }
     }
 }
