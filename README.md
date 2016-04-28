@@ -20,9 +20,11 @@ There is 'config.json' that maps IP addresses to implied cloud provider, region,
 
 Assuming you have a local MongoDb
 
-%cp dot.env .env
-%npm install
-%npm start
+```console
+% cp dot.env .env
+% npm install
+% npm start
+```
 
 You can edit .env to set up POSTGRES_URI and MYSQL_URI if required.
 
