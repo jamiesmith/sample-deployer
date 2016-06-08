@@ -5,6 +5,14 @@ var methodOverride = require('method-override');
 var dotenv = require('dotenv');
 var async = require('async');
 var http = require('http');
+var morgan = require('morgan')
+
+morgan.token('cntm-instance', function getUUID (req) {
+  return process.env['CNTM_INSTANCE_UUID']
+})
+
+morgan.format('apcera', 'access-log :remote-addr - :remote-user [:date[clf] latency :response-time ms instance :cntm-instance ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"')
+app.use(morgan('apcera'))
 
 var fs = require('fs');
 if (fs.existsSync('.env')) {
@@ -129,12 +137,10 @@ async.eachSeries(connectors,
     });
 
 app.delete('/api',function(req,res){
-    console.log(instanceLogStr,'DELETE /api');
     process.exit(1);
 });
 
 app.get('/api/db',function(req,res){
-    console.log(instanceLogStr,'GET /api/db');
     dbConnector.getDb(function(error,info){
         if (error) {
             res.send(error);
@@ -145,7 +151,6 @@ app.get('/api/db',function(req,res){
 });
 
 app.put('/api/db',function(req,res){
-    console.log(instanceLogStr,'PUT /api/db');
     dbConnector = null;
     async.eachSeries(connectors,function(connector,callback){
         connector.tearDown(function(error){
@@ -244,7 +249,6 @@ app.get('/api/dcs', function(req, res) {
 });
 
 app.get('/api/todos', function(req, res) {
-    console.log(instanceLogStr,'GET /api/todos');
 	dbInfo = {};
     dbConnector.getDb(function(error,info){
         if (!error) {
@@ -263,7 +267,6 @@ app.get('/api/todos', function(req, res) {
 });
 
 app.get('/api/todos-orig', function(req, res) {
-    console.log(instanceLogStr,'GET /api/todos');
 	dbInfo = {};
     dbConnector.getDb(function(error,info){
         if (!error) {
@@ -289,8 +292,6 @@ app.get('/api/todos-orig', function(req, res) {
 
 // create todo and send back all todos after creation
 app.post('/api/todos', function(req, res) {
-    console.log(instanceLogStr,'POST /api/todos');
-
 	dbInfo = {};
     dbConnector.getDb(function(error,info){
         if (!error) {
@@ -315,8 +316,6 @@ app.post('/api/todos', function(req, res) {
 
 // delete a todo
 app.delete('/api/todos/:id', function(req, res) {
-    console.log(instanceLogStr,'DELETE /api/todos/:id');
-
 	dbInfo = {};
     dbConnector.getDb(function(error,info){
         if (!error) {
