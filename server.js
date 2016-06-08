@@ -253,7 +253,7 @@ app.get('/api/todos', function(req, res) {
     dbConnector.getDb(function(error,info){
         if (!error) {
             dbInfo = info;
-			console.log("DB INFO", info);
+			// console.log("DB INFO", info);
         }        
     });
 		
@@ -271,7 +271,7 @@ app.get('/api/todos-orig', function(req, res) {
     dbConnector.getDb(function(error,info){
         if (!error) {
             dbInfo = info;
-			console.log("DB INFO", info);
+			// console.log("DB INFO", info);
         }        
     });
 		
