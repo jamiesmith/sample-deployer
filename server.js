@@ -11,7 +11,25 @@ morgan.token('cntm-instance', function getUUID (req) {
   return process.env['CNTM_INSTANCE_UUID']
 })
 
-morgan.format('apcera', 'access-log :remote-addr - :remote-user [:date[clf] latency :response-time ms instance :cntm-instance ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"')
+morgan.token('real-client', function getRealClient (req) {
+    console.log(req);    
+    return req["headers"]["x-forwarded-for"];
+})
+
+morgan.token('cntm-job', function getJobFQN (req) {
+  return process.env['CNTM_JOB_FQN']
+})
+
+morgan.token('zulu-date', function getZuluDate (req) {
+	return new Date().toISOString();
+})
+
+// Trying to get the client IP rather than router
+//
+// morgan.format('apcera', 'access-log :remote-addr :remote-user :date[iso] latency :response-time ms :cntm-job :cntm-instance ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"')
+
+morgan.format('apcera', 'access-log :real-client :remote-user :zulu-date latency :response-time ms :cntm-job :cntm-instance ":method :url HTTP/:http-version" :status :res[content-length] ":referrer" ":user-agent"')
+
 app.use(morgan('apcera'))
 
 var fs = require('fs');
