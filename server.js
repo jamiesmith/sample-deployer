@@ -12,7 +12,7 @@ morgan.token('cntm-instance', function getUUID (req) {
 })
 
 morgan.token('real-client', function getRealClient (req) {
-    console.log(req);    
+    // JRS-TMP console.log(req);    
     return req["headers"]["x-forwarded-for"];
 })
 
