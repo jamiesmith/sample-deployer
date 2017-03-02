@@ -59,9 +59,10 @@ module.exports.getToDos = function (callback) {
 }
 
 module.exports.addToDo = function (toDoObject,callback) {
-	var command = 'INSERT into tasks (title) VALUES (\'' + toDoObject.title + '\');'
-	console.log(command);
-    msConnection.query(command, function(error, result) {
+	
+	var command = 'INSERT into tasks (title) VALUES (?);'
+	console.log(command, " ", toDoObject.title);
+    msConnection.query(command,  toDoObject.title, function(error, result) {
       if (error) {
       	callback(error);
       } else {
@@ -71,9 +72,10 @@ module.exports.addToDo = function (toDoObject,callback) {
 }
 
 module.exports.removeToDo = function (title, callback) {
-	var command = "DELETE FROM tasks where title = '" + title + "';";
-	console.log(command);
-	msConnection.query(command,function(error, result) {
+	
+	var command = "DELETE FROM tasks where title = ?";
+	console.log(command, " ", title);
+	msConnection.query(command, title, function(error, result) {
       if (error) {
         callback(error);
       } else {

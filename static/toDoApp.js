@@ -4,28 +4,28 @@ var scotchTodo = angular.module('toDoApp', []);
 function mainController($scope, $http) {
 
 	var markersArray = [];
-	google.maps.Map.prototype.clearOverlays = function() 
+	google.maps.Map.prototype.clearOverlays = function()
 	{
-	  for (var i = 0; i < markersArray.length; i++ ) 
+	  for (var i = 0; i < markersArray.length; i++ )
 	  {
 	    markersArray[i].setMap(null);
 	  }
 	  markersArray.length = 0;
 	}
-		
+
 	function setDatacenters (data, datacenters, activeIP)
 	{
 	    var infowindow = new google.maps.InfoWindow();
 	    var marker;
-		
+
 		map.clearOverlays();
-		
+
 		for (var eachIP in datacenters)
-		{			
+		{
 			var location = data.datacenters[eachIP];
-			
-			// Show this one if it is in the current cluster, OR it is this IP.  
-			// (This allows hidden ones to show)		
+
+			// Show this one if it is in the current cluster, OR it is this IP.
+			// (This allows hidden ones to show)
 			//
 			if ((activeIP != eachIP) &&
 				(data.cluster == null || location.cluster != data.cluster))
@@ -56,20 +56,20 @@ function mainController($scope, $http) {
 	                origin: new google.maps.Point(0,0),
 	                anchor: new google.maps.Point(19,68)
 	            };
-			}			
+			}
 			marker = new google.maps.Marker({
 				position: latLng,
 				map: map
 			});
             marker.setIcon(image);
-			
+
 			// So we can clear them later
 			//
 			markersArray.push(marker);
-			
-			google.maps.event.addListener(marker, 'click', (function(marker, eachIP) 
+
+			google.maps.event.addListener(marker, 'click', (function(marker, eachIP)
 				{
-					return function() 
+					return function()
 					{
 						var location = datacenters[eachIP];
 						var name = activeFlag + location.cloud + " (" + location.region + ") [" + eachIP + "]";
@@ -79,7 +79,7 @@ function mainController($scope, $http) {
 				})(marker, eachIP));
 		}
     }
-	
+
     $scope.refreshToDo = function () {
         $http.get('/api/todos')
             .success(function(data) {
@@ -87,7 +87,7 @@ function mainController($scope, $http) {
             })
             .error(function(data, status, headers, config) {
                 console.log('error on refresh',data,status,headers,config);
-            });  
+            });
     }
 
     $scope.createTodo = function() {
@@ -105,28 +105,28 @@ function mainController($scope, $http) {
     };
 
     $scope.deleteTodo = function(id) {
-        $http.delete('/api/todos/' + id)
+        $http.delete('/api/todos/' + encodeURIComponent(id))
             .success(function(data) {
                 setPageData(data);
             })
             .error(function(data) {
                 console.log('Error: ' + data);
-            });        
+            });
     };
 
     function setPageData (data) {
 		var activeIP = data.provider.ipAddress;
-		
+
         $scope.todos = data.todos;
-		
+
 		$scope.cluster = ((data.cluster == null) ? "" : data.cluster);
-		
+
 		setDatacenters(data, data.datacenters, activeIP);
-		
+
         lastLatLng = data.latLng;
 
-        $scope.provider = data.provider; 
-		
+        $scope.provider = data.provider;
+
 		if (!$scope.currentInfo) {
           $scope.currentInfo = {};
         }
@@ -135,10 +135,10 @@ function mainController($scope, $http) {
 		{
 	        $scope.currentInfo = data.currentDbInfo;
 		}
-		
+
         if (data.error) {
             $scope.error = data.error;
-            console.log('error',$scope.error);  
+            console.log('error',$scope.error);
         } else {
             $scope.error = null;
             delete $scope.error;
@@ -152,11 +152,11 @@ function mainController($scope, $http) {
       if ($scope.dbInfo.type) {
           $scope.db.type = $scope.dbInfo.type.toLowerCase();
       }
-      $scope.db.user = $scope.dbInfo.user;  
-      $scope.db.password = $scope.dbInfo.password;  
-      $scope.db.host = $scope.dbInfo.host;  
-      $scope.db.port = $scope.dbInfo.port;  
-      $scope.db.database = $scope.dbInfo.database;  
+      $scope.db.user = $scope.dbInfo.user;
+      $scope.db.password = $scope.dbInfo.password;
+      $scope.db.host = $scope.dbInfo.host;
+      $scope.db.port = $scope.dbInfo.port;
+      $scope.db.database = $scope.dbInfo.database;
     }
 
     $scope.connectDb = function() {
@@ -171,7 +171,9 @@ function mainController($scope, $http) {
                 $http.get('/api/db')
                     .success(function(data) {
                         $scope.dbInfo = data;
-                        $scope.refreshToDo();
+                        //$scope.refreshToDo();
+			$scope.currentInfo.user = $scope.dbInfo.user;
+			$scope.currentInfo.password = $scope.dbInfo.password;
                         console.log(data);
                     })
                     .error(function(data) {
@@ -196,7 +198,10 @@ function mainController($scope, $http) {
                 $http.get('/api/db')
                     .success(function(data) {
                         $scope.dbInfo = data;
-                        $scope.refreshToDo();
+                        //$scope.refreshToDo();
+			$scope.currentInfo.user = $scope.dbInfo.user;
+			$scope.currentInfo.password = $scope.dbInfo.password;
+
                         console.log(data);
                     })
                     .error(function(data) {
@@ -217,7 +222,7 @@ function mainController($scope, $http) {
             .error(function(data, status, headers, config, statusText) {
                 console.log('error on kill server');
                 window.location.reload();
-            });       
+            });
     }
 
     var mapOptions = {

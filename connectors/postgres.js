@@ -59,9 +59,9 @@ module.exports.getToDos = function (callback) {
 }
 
 module.exports.addToDo = function (toDoObject,callback) {
-	var command = 'INSERT into tasks (title) VALUES (\'' + toDoObject.title + '\');'
-	console.log(command);
-    pgClient.query(command, function(error, result) {
+	var command = 'INSERT into tasks (title) VALUES ($1);'
+	console.log(command + " " + toDoObject.title);
+    pgClient.query({text: command, values: [toDoObject.title]}, function(error, result) {
       if (error) {
       	callback(error);
       } else {
@@ -71,9 +71,9 @@ module.exports.addToDo = function (toDoObject,callback) {
 }
 
 module.exports.removeToDo = function (title, callback) {
-	var command = "DELETE FROM tasks where title = '" + title + "';";
-	console.log(command);
-	pgClient.query(command,function(error, result) {
+	var command = "DELETE FROM tasks where title = $1;";
+	console.log(command + " " + title);
+	pgClient.query({text: command, values: [title]},function(error, result) {
       if (error) {
       	console.log(error);
         callback(error);
