@@ -7,8 +7,8 @@ A simple NodeJS ToDo app with a twist - it can show you the source and type of p
 
 To get your own Todo App running on Apcera, click the button below:
 
-[![Deploy](button.png)](http://deployer.demo.proveapcera.io/?template=https://github.com/jamiesmith/sample-deployer)
-(prove)
+[![Deploy](button.png)](http://deployer.demo.apcera.net/?template=https://github.com/jamiesmith/sample-deployer)
+(demo)
 
 Fill out the form, and you should be good to go in a few seconds.
 
@@ -20,9 +20,11 @@ There is 'config.json' that maps IP addresses to implied cloud provider, region,
 
 Assuming you have a local MongoDb
 
-%cp dot.env .env
-%npm install
-%npm start
+```code
+% cp dot.env .env
+% npm install
+% npm start
+```
 
 You can edit .env to set up POSTGRES_URI and MYSQL_URI if required.
 

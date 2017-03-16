@@ -1,84 +1,74 @@
 {
-  "52.42.246.222": {
-      "cloud": "openstack",
-      "cluster": "demo",
-      "icon": "images/openstack.png",
-      "location": {
-          "lat": 40.7,
-          "lng": -74
-      },
-      "region": "us-east"
-  },
-  "52.42.144.145": {
-      "cloud": "amazon",
-      "cluster": "demo",
-      "icon": "images/aws.png",
-      "location": {
-          "lat": 36.8,
-          "lng": -76
-      },
-      "region": "us-east"
-  },
-  "52.42.17.42": {
-      "cloud": "microsoft",
-      "cluster": "demo",
-      "icon": "images/azure.png",
-      "location": {
-          "lat": 47.6,
-          "lng": -122.3
-      },
-      "region": "Seattle"
-  },
-  "52.37.125.172": {
-      "cloud": "vmware",
-      "cluster": "demo",
-      "icon": "images/vmware.png",
-      "location": {
-          "lat": 37.7,
-          "lng": -122.4
-      },
-      "region": "us-west"
-  },
-  "52.40.108.238": {
-      "cloud": "google",
-      "cluster": "demo",
-      "icon": "images/gce.png",
-      "location": {
-          "lat": 41.2,
-          "lng": -95.8
-      },
-      "region": "central-us"
-  },
-  "52.42.213.67": {
-      "cloud": "amazon",
-      "cluster": "demo",
-      "icon": "images/aws.png",
-      "location": {
-          "lat": 43.8,
-          "lng": -120.5
-      },
-      "region": "us-west"
-  },
-  "52.43.52.203": {
-      "cloud": "google",
-      "cluster": "demo",
-      "icon": "images/gce.png",
-      "location": {
-          "lat": 37.3,
-          "lng": -121.8
-      },
-      "region": "san jose"
-  },
-  "52.43.54.99": {
-      "cloud": "openstack",
-      "cluster": "demo",
-      "icon": "images/openstack.png",
-      "location": {
-          "lat": 37.7,
-          "lng": -122.4
-      },
-      "region": "san francisco"
-  },
+     "54.85.72.109": {
+     "cloud": "amazon",
+     "cluster": "demo",
+     "icon": "images/aws.png",
+     "location": {
+         "lat": 36.8,
+         "lng": -76
+     },
+     "region": "us-east"
+ },
+ "52.72.21.8": {
+   "cloud": "amazon",
+   "cluster": "demo",
+   "icon": "images/aws.png",
+   "location": {
+       "lat": 36.8,
+       "lng": -76
+   },
+   "region": "us-east"
+ },
+ "34.206.71.45": {
+   "cloud": "amazon",
+   "cluster": "demo",
+   "icon": "images/aws.png",
+   "location": {
+       "lat": 36.8,
+       "lng": -76
+   },
+   "region": "us-east"
+ },
+ "4.16.82.30": {
+     "cloud": "vmware-HQ",
+     "cluster": "demo",
+     "icon": "images/vmware.png",
+     "location": {
+         "lat": 37.7,
+         "lng": -122.4
+     },
+     "region": "us-west"
+ },
+ "146.148.108.190": {
+     "cloud": "google",
+     "cluster": "demo",
+     "icon": "images/gce.png",
+     "location": {
+         "lat": 41.2,
+         "lng": -95.8
+     },
+     "region": "central-us"
+   },
+   "35.184.170.80": {
+       "cloud": "google",
+       "cluster": "demo",
+       "icon": "images/gce.png",
+       "location": {
+           "lat": 41.2,
+           "lng": -95.8
+       },
+       "region": "central-us"
+   },
+   "104.198.36.21": {
+     "cloud": "google",
+     "cluster": "demo",
+     "icon": "images/gce.png",
+     "location": {
+         "lat": 41.2,
+         "lng": -95.8
+     },
+     "region": "central-us"
+   },
     "168.61.167.44": {
         "cloud": "Azure",
         "cluster": "prove-disabled",
