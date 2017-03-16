@@ -26,7 +26,7 @@ Assuming you have a local MongoDb
 % npm start
 ```
 
-You can edit .env to set up POSTGRES_URI and MYSQL_URI if required.
+You can edit .env to set up POSTGRES_URI or MYSQL_URI if required.
 
 # Usage
 
@@ -40,6 +40,7 @@ If *in-memory* is used a warning alert is placed in the UI to remind you that th
 
 If you want to bind your app to a mysql provider while creating the app, you can add something like the following to continuum.conf:
 
+```code
 services [
    {
       provider_name : "/apcera/providers::mysqlprovider",
@@ -47,6 +48,7 @@ services [
       service_name: "todo_mysql",
    }
 ]
+```
 
 ## Cluster Locations
 There is a cluster location map which shows the locations defined by the cluster.  This map relies on the config.json file, and looks for tags based on the "datacenter" tag.  The current IP is used to determine which cluster you are in, then shows the other nodes from that cluster.
