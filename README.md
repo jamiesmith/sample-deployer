@@ -53,6 +53,6 @@ services [
 ## Cluster Locations
 There is a cluster location map which shows the locations defined by the cluster.  This map relies on the config.json file, and looks for tags based on the "datacenter" tag.  The current IP is used to determine which cluster you are in, then shows the other nodes from that cluster.
 
-![Sample Cluster Locations](./prove-cluster.jpg)
+![Sample Cluster Locations](./cluster.jpg)
 
 The server map section of the page has also been updated to do this.  The map stays where it is, and the active node jumps around while running, while nodes are present.
