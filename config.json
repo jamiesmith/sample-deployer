@@ -1,5 +1,5 @@
 {
-     "54.85.72.109": {
+     "34.205.26.193": {
      "cloud": "amazon",
      "cluster": "demo",
      "icon": "images/aws.png",
@@ -9,7 +9,7 @@
      },
      "region": "us-east"
  },
- "52.72.21.8": {
+ "54.175.87.127": {
    "cloud": "amazon",
    "cluster": "demo",
    "icon": "images/aws.png",
@@ -19,7 +19,7 @@
    },
    "region": "us-east"
  },
- "34.206.71.45": {
+ "54.236.55.46": {
    "cloud": "amazon",
    "cluster": "demo",
    "icon": "images/aws.png",
@@ -39,7 +39,7 @@
      },
      "region": "us-west"
  },
- "146.148.108.190": {
+ "35.184.6.30": {
      "cloud": "google",
      "cluster": "demo",
      "icon": "images/gce.png",
@@ -59,7 +59,7 @@
        },
        "region": "central-us"
    },
-   "104.198.36.21": {
+   "146.148.108.190": {
      "cloud": "google",
      "cluster": "demo",
      "icon": "images/gce.png",
